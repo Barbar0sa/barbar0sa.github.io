@@ -195,7 +195,7 @@
 
     /* ---------- карточка ---------- */
     var card = h('div', { class: 'lm-card', id: id + '-card', 'aria-live': 'polite', tabindex: '-1' });
-    var cardHint = h('p', { class: 'lm-card-hint', text: 'Выберите библиотеку на карте или в списке — здесь появятся адрес, телефон и режим работы.' });
+    var cardHint = h('p', { class: 'lm-card-hint', text: 'Выберите библиотеку на карте или в списке, и здесь появятся адрес, телефон и режим работы.' });
     card.appendChild(cardHint);
 
     /* ---------- список ---------- */

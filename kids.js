@@ -158,7 +158,7 @@
       const found = books.filter(b => b['возраст'].includes(age) && b['жанры'].includes(genre));
       if (!found.length) {
         note.textContent = `${g['название']}, ${a['название']}: подборки пока нет.`;
-        out.innerHTML = `<div class="kids-empty"><p><strong>Пока подборки нет — спросите библиотекаря.</strong> Мы показываем только книги из списков, которые составила библиотека.</p><p><a class="button dark" href="${linkTo('ask')}">Спросить библиотекаря ${arrowSvg}</a></p><p>Или выберите другой жанр выше.</p></div>`;
+        out.innerHTML = `<div class="kids-empty"><p><strong>Такой подборки пока нет. Спросите библиотекаря.</strong> Мы показываем только книги из списков, которые составила библиотека.</p><p><a class="button dark" href="${linkTo('ask')}">Спросить библиотекаря ${arrowSvg}</a></p><p>Или выберите другой жанр выше.</p></div>`;
         return;
       }
       note.textContent = `${g['название']}, ${a['название']}: ${found.length} ${plural(found.length, 'книга', 'книги', 'книг')}.`;
@@ -259,11 +259,11 @@
       state.quizzes[quiz.id] = { done: true, best: Math.max(score, prev && prev.best || 0), total };
       save();
       const ratio = score / total;
-      const word = ratio === 1 ? 'Без единой ошибки!' : ratio >= 0.7 ? 'Отличный результат!' : ratio >= 0.4 ? 'Хорошее начало!' : 'Есть куда расти!';
+      const word = ratio === 1 ? 'Без единой ошибки!' : ratio >= 0.7 ? 'Отличный результат!' : ratio >= 0.4 ? 'Хорошее начало!' : 'В следующий раз получится!';
       owlMood(ratio >= 0.5 ? 'happy' : 'surprised', 2400);
       const learn = sources.filter(s => s.url.startsWith('/'));
       const ext = sources.filter(s => !s.url.startsWith('/')).concat(quiz['источник'] && !sources.some(s => s.url === quiz['источник']) ? [{ url: quiz['источник'], title: 'Ответы на вопросы диктанта' }] : []);
-      card.innerHTML = `<div class="kids-result"><h2 tabindex="-1">${word}</h2><p class="kids-score"><strong>${score}</strong> из ${total} правильных ответов</p>${learn.length ? `<h3>Узнать больше</h3><ul class="kids-learn">${learn.map(s => `<li><a href="${h(s.url)}">${h(s.title)}</a></li>`).join('')}</ul>` : ''}${ext.length ? `<p class="kids-book-ref">Вопросы взяты из опубликованных материалов: ${ext.map(s => `<a href="${h(s.url)}" target="_blank" rel="noopener">${h(s.title.replace(/, вопрос \d+$/, ''))}</a>`).join(', ')}.</p>` : ''}<div class="kids-invite"><p><strong>Ещё больше книг и викторин — в библиотеке.</strong> ${visit}</p></div><div class="hero-actions"><button type="button" class="button dark" data-again>Пройти ещё раз</button><button type="button" class="button outline" data-menu>Другая викторина</button><a class="button outline" href="${linkTo('kids-badges')}">Мои значки</a></div></div>`;
+      card.innerHTML = `<div class="kids-result"><h2 tabindex="-1">${word}</h2><p class="kids-score"><strong>${score}</strong> из ${total} правильных ответов</p>${learn.length ? `<h3>Узнать больше</h3><ul class="kids-learn">${learn.map(s => `<li><a href="${h(s.url)}">${h(s.title)}</a></li>`).join('')}</ul>` : ''}${ext.length ? `<p class="kids-book-ref">Вопросы взяты из опубликованных материалов: ${ext.map(s => `<a href="${h(s.url)}" target="_blank" rel="noopener">${h(s.title.replace(/, вопрос \d+$/, ''))}</a>`).join(', ')}.</p>` : ''}<div class="kids-invite"><p><strong>В библиотеке книг и викторин гораздо больше.</strong> ${visit}</p></div><div class="hero-actions"><button type="button" class="button dark" data-again>Пройти ещё раз</button><button type="button" class="button outline" data-menu>Другая викторина</button><a class="button outline" href="${linkTo('kids-badges')}">Мои значки</a></div></div>`;
       card.querySelector('h2').focus();
       card.querySelector('[data-again]').addEventListener('click', () => runQuiz(root, quiz, quizzes));
       card.querySelector('[data-menu]').addEventListener('click', () => { setQuizUrl(''); quizMenu(root, quizzes, true); });

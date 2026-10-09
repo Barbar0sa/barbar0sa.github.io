@@ -875,6 +875,7 @@ html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),
 .access-mode :is(h1,h2) em{white-space:normal}
 .access-mode .panel-word{font-size:clamp(1.15rem,8vw,2rem);overflow-wrap:anywhere}
 .access-mode :is(p,li,dd,h3,a,.button,.hours,.visit-hours){overflow-wrap:break-word}
+.access-mode .source-content .link-card{overflow-wrap:anywhere}
 .access-mode .button{white-space:normal;max-width:100%;height:auto}
 .access-mode :is(.hero-actions,.visit-links,.heritage-links){flex-wrap:wrap}
 @media(max-width:900px){.access-mode :is(.contact-layout,.visit,.reader,.heritage){grid-template-columns:minmax(0,1fr)}}
