@@ -1560,7 +1560,7 @@ body:not(.access-mode) .hero.is-light .hero-heading{width:min(46%,620px)}
 }
 /* «Пушкинская карта»: вставка по «Краткому руководству по использованию визуального стиля» (docs/PUSHKIN.md).
    Шрифты только Dela Gothic One + Roboto, фон сплошной (без фото), цвета программы. Файлы шрифтов грузятся только там, где есть вставка. */
-.pk-insert{--pk-ink:#1d1d24;--pk-soft:#c9c9d1;--pk-raspberry:#e6007e;--pk-neon:#44d62c;--pk-cyan:#00aeef;--pk-yellow:#ffed00;
+.pk-insert{--pk-ink:#1d1d1d;--pk-soft:#c9c9d1;--pk-raspberry:#cb006b;--pk-neon:#3bff0c;--pk-cyan:#00aeef;--pk-yellow:#ffed00;
  display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);margin-top:45px;background:var(--pk-ink);color:#fff;border-radius:var(--r-md);overflow:hidden;font-family:roboto,Arial,sans-serif}
 .pk-main{padding:34px 38px 36px;min-width:0}
 .pk-insert .pk-kicker{display:flex;align-items:center;gap:10px;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pk-neon)}
