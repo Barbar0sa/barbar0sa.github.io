@@ -1559,44 +1559,66 @@ body:not(.access-mode) .hero.is-light .hero-heading{width:min(46%,620px)}
  body:not(.access-mode) .hero.is-light .hero-art{inset:auto 0 0 auto;height:86%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%);mask-image:linear-gradient(180deg,transparent,#000 14%)}
 }
 /* «Пушкинская карта»: вставка по «Краткому руководству по использованию визуального стиля» (docs/PUSHKIN.md).
-   Шрифты только Dela Gothic One + Roboto, фон сплошной (без фото), цвета программы. Файлы шрифтов грузятся только там, где есть вставка. */
-.pk-insert{--pk-ink:#24272a;--pk-soft:#c9c9d1;--pk-raspberry:#e80087;--pk-neon:#32ff00;--pk-cyan:#00aeef;--pk-yellow:#ffed00;
- display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);margin-top:45px;background:var(--pk-ink);color:#fff;border-radius:var(--r-md);overflow:hidden;font-family:roboto,Arial,sans-serif}
-.pk-main{padding:34px 38px 36px;min-width:0}
-.pk-insert .pk-kicker{display:flex;align-items:center;gap:10px;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pk-neon)}
-.pk-insert .pk-kicker:before{content:'';width:10px;height:10px;border-radius:50%;background:var(--pk-cyan);flex:none}
-.pk-insert .pk-title{margin:14px 0 0;font:400 clamp(1.55rem,1.05rem + 1.5vw,2.35rem)/1.12 'dela gothic one',roboto,sans-serif;letter-spacing:0;color:#fff;max-width:22ch;text-wrap:balance}
-.pk-insert .pk-text{margin-top:14px;max-width:52ch;font-size:1rem;line-height:1.55;color:var(--pk-soft)}
+   Шрифты только Dela Gothic One + Roboto, цвета программы. Фон: фактура из слогана, набрана текстом (не картинка).
+   Справа вырезанные из официального промо-изображения бюст и карта. Файлы шрифтов грузятся только там, где есть вставка. */
+.pk-insert{--pk-ink:#24272a;--pk-ink-0:rgb(36 39 42/0);--pk-tone:#33373b;--pk-soft:#c9c9d1;--pk-raspberry:#e80087;--pk-neon:#32ff00;--pk-cyan:#00aeef;--pk-yellow:#ffed00;
+ position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-top:45px;background:var(--pk-ink);color:#fff;border-radius:var(--r-md);overflow:hidden;font-family:roboto,Arial,sans-serif}
+.pk-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.pk-bg:before{content:"ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО ВЕДИ СЕБЯ КУЛЬТУРНО"/"";position:absolute;top:-30%;left:-12%;width:130%;font:400 2.9rem/.94 'dela gothic one',roboto,sans-serif;color:var(--pk-tone);text-transform:uppercase;word-spacing:.1em;rotate:-6deg;transform-origin:50% 50%}
+.pk-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--pk-ink) 0,rgb(36 39 42/.9) 34%,var(--pk-ink-0) 60%)}
+.pk-main{position:relative;container-type:inline-size;padding:40px 8px 44px 44px;min-width:0}
+.pk-logo{display:block;width:min(340px,100%);height:auto;margin:0 0 22px}
+.pk-main picture:has(.pk-logo)+.pk-kicker{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body.access-no-images .pk-main picture:has(.pk-logo)+.pk-kicker{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
+.pk-insert .pk-kicker{margin-bottom:8px;font-size:.95rem;font-weight:700;color:var(--pk-neon)}
+.pk-insert .pk-title{margin:0;font:400 clamp(1.4rem,.9rem + 2.2vw,2.6rem)/1.04 'dela gothic one',roboto,sans-serif;font-size:clamp(1.4rem,9.4cqi,3rem);letter-spacing:0;color:var(--pk-neon);text-transform:uppercase;overflow-wrap:normal;word-break:normal;hyphens:manual;text-wrap:balance}
+.pk-insert .pk-text{margin-top:16px;max-width:44ch;font-size:1.0625rem;line-height:1.55;color:var(--pk-soft)}
 .pk-nw{white-space:nowrap}
-.pk-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:24px}
-.pk-insert .pk-button{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 22px;border-radius:8px;background:var(--pk-neon);color:var(--pk-ink);font:400 .95rem/1.2 'dela gothic one',roboto,sans-serif;text-decoration:none;transition:background-color .2s ease}
+.pk-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:26px}
+.pk-insert .pk-button{display:inline-flex;align-items:center;gap:12px;min-height:50px;padding:0 24px;border-radius:8px;background:var(--pk-neon);color:var(--pk-ink);font:400 .95rem/1.2 'dela gothic one',roboto,sans-serif;text-decoration:none;transition:background-color .2s ease,transform .15s ease}
 .pk-insert .pk-button svg{width:18px;height:18px;flex:none}
 .pk-insert .pk-button:hover{background:var(--pk-yellow)}
+.pk-insert .pk-button:active{transform:translateY(1px)}
 .pk-insert .pk-link{color:#fff;font-size:1rem;text-decoration:underline;text-decoration-color:var(--pk-neon);text-decoration-thickness:2px;text-underline-offset:.25em}
 .pk-insert .pk-link:hover{color:var(--pk-neon)}
 .pk-insert :is(.pk-button,.pk-link):focus-visible{outline:3px solid var(--pk-cyan);outline-offset:3px}
-.pk-brand{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:34px 32px;background:var(--pk-raspberry);min-width:0}
-.pk-brand:before{content:'';width:56px;height:8px;background:var(--pk-yellow)}
-.pk-logo{display:block;width:min(280px,100%);height:auto;margin:0 0 .9rem}.pk-main picture:has(.pk-logo)+.pk-kicker{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}body.access-no-images .pk-main picture:has(.pk-logo)+.pk-kicker{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
-.pk-insert .pk-slogan{font:400 clamp(1.45rem,1rem + 1.3vw,2.15rem)/1.04 'dela gothic one',roboto,sans-serif;text-transform:uppercase;color:#fff;overflow-wrap:anywhere}
+.pk-side{position:relative;min-width:0;min-height:400px}
+.pk-insert .pk-slogan{position:absolute;z-index:2;top:38px;right:30px;max-width:calc(100% - 44px);padding:.5em 1.05em .55em;background:var(--pk-raspberry);clip-path:polygon(3.5% 0,100% 0,96.5% 100%,0 100%);font:400 clamp(1.2rem,.85rem + .7vw,1.5rem)/1.1 'dela gothic one',roboto,sans-serif;text-transform:uppercase;color:#fff;rotate:-5deg;text-align:center;text-wrap:balance}
+.pk-art{position:absolute;inset:0}
+.pk-art img{position:absolute;height:auto}
+.pk-bust{left:6%;bottom:0;width:clamp(150px,45%,215px);-webkit-mask-image:linear-gradient(90deg,transparent 2%,#000 30%);mask-image:linear-gradient(90deg,transparent 2%,#000 30%)}
+.pk-card{right:4%;bottom:10%;width:clamp(140px,48%,220px);filter:drop-shadow(0 16px 20px rgb(0 0 0/.45))}
 #page[data-page="events"] .pk-insert{margin-top:30px}
-@media(max-width:760px){
+@media(max-width:820px){
  .pk-insert{grid-template-columns:minmax(0,1fr);margin-top:32px}
- .pk-main{padding:26px 22px 28px}
- .pk-brand{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:22px}
- .pk-brand:before{display:none}
- .pk-insert .pk-button{width:100%;justify-content:space-between}
+ .pk-bg:before{font-size:2.3rem;top:-6%}
+ .pk-bg:after{background:linear-gradient(180deg,var(--pk-ink) 0,rgb(36 39 42/.9) 52%,var(--pk-ink-0) 74%)}
+ .pk-main{padding:28px 22px 6px}
+ .pk-logo{width:min(320px,100%);margin-bottom:18px}
+ .pk-side{min-height:clamp(270px,74vw,380px)}
+ .pk-insert .pk-slogan{top:26px;right:16px}
+ .pk-bust{left:0;width:clamp(130px,42%,215px)}
+ .pk-card{right:3%;bottom:8%;width:clamp(150px,50%,240px)}
 }
-/* Версия для слабовидящих: цвета активной схемы, без неона и фирменных шрифтов, одна колонка */
+@media(max-width:480px){
+ .pk-insert .pk-button{width:100%;justify-content:space-between}
+ .pk-insert .pk-slogan{max-width:72%;right:12px}
+}
+@media(max-width:360px){
+ .pk-insert .pk-button{padding:0 16px;font-size:.84rem}
+}
+/* Версия для слабовидящих: цвета активной схемы, без неона, фактуры, картинок и фирменных шрифтов, одна колонка */
 .access-mode .pk-insert{display:block;background:var(--access-bg);color:var(--access-fg);border:2px solid var(--access-fg);border-radius:0}
+.access-mode .pk-insert :is(.pk-bg,.pk-art){display:none}
 .access-mode .pk-main{padding:25px}
-.access-mode .pk-brand{display:block;padding:20px 25px;background:var(--access-bg);border-top:2px solid var(--access-fg)}
-.access-mode .pk-brand:before,.access-mode .pk-kicker:before{display:none}
-.access-mode .pk-insert :is(.pk-title,.pk-slogan,.pk-button){font-family:'manrope',Arial,sans-serif;font-weight:700;letter-spacing:normal}
+.access-mode .pk-side{min-height:0;padding:20px 25px;border-top:2px solid var(--access-fg)}
+.access-mode .pk-insert .pk-slogan{position:static;max-width:none;padding:0;background:none;clip-path:none;rotate:none;text-align:left;color:var(--access-fg)}
+.access-mode .pk-insert :is(.pk-title,.pk-slogan,.pk-button){font-family:'manrope',Arial,sans-serif;font-weight:700;letter-spacing:normal;text-transform:none}
+.access-mode .pk-insert :is(.pk-title,.pk-kicker){color:var(--access-fg)}
 .access-mode .pk-insert .pk-title{max-width:none;font-size:1.6rem;line-height:1.25}
-.access-mode .pk-insert .pk-slogan{font-size:1.3rem;line-height:1.25;text-transform:none}
-.access-mode .pk-insert .pk-text{max-width:65ch}
+.access-mode .pk-insert .pk-slogan{font-size:1.3rem;line-height:1.25}
+.access-mode .pk-insert .pk-text{max-width:65ch;color:var(--access-fg)}
 .access-mode .pk-insert .pk-button{width:auto;background:var(--access-bg);color:var(--access-fg);border:2px solid var(--access-fg);border-radius:0}
-.access-mode .pk-insert .pk-link{text-decoration-color:currentColor}
+.access-mode .pk-insert .pk-link{color:var(--access-fg);text-decoration-color:currentColor}
 .access-mode .pk-insert :is(.pk-button,.pk-link):focus-visible{outline-color:var(--access-fg)}
 
