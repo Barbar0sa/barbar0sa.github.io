@@ -1546,3 +1546,39 @@ html.motion-ok .owl-says-head img{animation:owl-bob 3.6s ease-in-out infinite}
 [data-home-owl]{aspect-ratio:556/636}
 .owl-greeter.owl,.owl-says-head.owl{display:block}
 .access-mode[data-access-colors="wb"] :is(.owl-greeter svg,.owl-says-head svg){filter:drop-shadow(1.5px 0 0 #f5eee1) drop-shadow(-1.5px 0 0 #f5eee1) drop-shadow(0 1.5px 0 #f5eee1) drop-shadow(0 -1.5px 0 #f5eee1)}
+
+/* Home hero, light: the illustration (assets/hero/glavnaya-*) sits right, its empty left part under the text; paper fades it in on the left */
+body:not(.access-mode) .hero.is-light{background:var(--paper);color:var(--ink);min-height:clamp(540px,42vw,640px)}
+body:not(.access-mode) .hero.is-light:before{background:linear-gradient(90deg,var(--paper) 0,var(--paper) 30%,color-mix(in srgb,var(--paper) 70%,transparent) 40%,transparent 52%)}
+body:not(.access-mode) .hero.is-light .hero-art{inset:-30px 0 0 auto;aspect-ratio:16/9;max-width:none;opacity:1}
+body:not(.access-mode) .hero.is-light .hero-art img{height:100%;width:100%;object-fit:cover;object-position:right bottom}
+body:not(.access-mode) .hero.is-light h1{color:var(--navy)}
+body:not(.access-mode) .hero.is-light h1 em{color:var(--rowan-ink)}
+body:not(.access-mode) .hero.is-light .hero-heading p{color:var(--muted-strong)}
+body:not(.access-mode) .hero.is-light .hero-heading{width:min(46%,620px)}
+.hero-leaves{display:none}
+@media(max-width:900px){
+ body:not(.access-mode) .hero.is-light{display:flex;flex-direction:column;min-height:0}
+ body:not(.access-mode) .hero.is-light:before{display:none}
+ body:not(.access-mode) .hero.is-light .hero-heading{order:-1;width:100%;padding:44px 6% 0}
+ body:not(.access-mode) .hero.is-light .hero-art{position:relative;inset:auto;width:100%;aspect-ratio:16/9;margin-top:-6%}
+}
+@media(max-width:600px){
+ body:not(.access-mode) .hero.is-light .hero-heading{padding:36px 6% 0}
+ body:not(.access-mode) .hero.is-light .hero-heading p{max-width:none}
+ body:not(.access-mode) .hero.is-light .hero-art{aspect-ratio:5/4;margin-top:4px}
+ body:not(.access-mode) .hero.is-light .hero-art img{object-position:76% 100%}
+}
+/* a few leaves drift down over the picture; only with motion allowed (html.motion-ok is set by app.js) */
+@media(prefers-reduced-motion:no-preference){
+ html.motion-ok body:not(.access-mode) .hero.is-light .hero-leaves{display:block;position:absolute;inset:0;pointer-events:none;overflow:hidden}
+ .hero-leaves i{position:absolute;top:-24px;width:16px;height:9px;border-radius:0 100%;background:var(--sun);opacity:0;animation:hero-leaf 11s linear infinite}
+ .hero-leaves i:nth-child(1){left:44%;animation-delay:.5s}
+ .hero-leaves i:nth-child(2){left:57%;width:13px;height:7px;background:var(--rowan);animation-delay:4.2s;animation-duration:13s}
+ .hero-leaves i:nth-child(3){left:69%;animation-delay:7.4s;animation-duration:12s}
+ .hero-leaves i:nth-child(4){left:83%;width:12px;height:7px;background:#f39a1e;animation-delay:2.4s;animation-duration:14s}
+}
+@keyframes hero-leaf{0%{opacity:0;transform:translate(0,0) rotate(0)}8%{opacity:.85}50%{transform:translate(-40px,280px) rotate(160deg)}92%{opacity:.85}100%{opacity:0;transform:translate(10px,620px) rotate(330deg)}}
+@media(min-width:901px) and (max-width:1200px){
+ body:not(.access-mode) .hero.is-light .hero-art{inset:auto 0 0 auto;height:86%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%);mask-image:linear-gradient(180deg,transparent,#000 14%)}
+}

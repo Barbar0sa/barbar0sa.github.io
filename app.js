@@ -349,7 +349,7 @@ function parentOf(key){if(key==='services'||key==='kids')return null;if(key?.sta
 function breadcrumbs(title,chain){const plain=String(title).replace(/<[^>]+>/g,''),parent=parentOf(page),list=chain||(parent&&parent.label!==plain?[parent]:[]);return `<nav class="breadcrumb" aria-label="Хлебные крошки"><ol><li><a href="/">Главная</a></li>${list.map(c=>`<li><a href="${c.href}">${c.label}</a></li>`).join('')}<li aria-current="page">${plain}</li></ol></nav>`;}
 // Inner page header: a light band in the section's colour, breadcrumbs, H1, the page intro and a decorative scene.
 // Scenes: site/assets/illustrations/<name>-{480,720,960}.{avif,webp}; owls: site/assets/mascot/<pose>-{240,480}.{avif,webp}.
-const scenes={detyam:712,afisha:739,novosti:694,chitatelyam:693,kraevedenie:667,arhivy:603,'biblioteki-rayona':687,'o-biblioteke':714};
+const scenes={detyam:712,afisha:739,novosti:694,chitatelyam:693,kraevedenie:667,arhivy:603,'biblioteki-rayona':687,'o-biblioteke':714,resursy:643,kollegam:684};
 const owlPoses={point:[433,480],confused:[342,480],wave:[405,480],'head-happy':[457,480],read:[440,480],think:[363,480],celebrate:[418,480]};
 function owlPicture(pose,sizes,attrs=''){const [w,h]=owlPoses[pose],b='/assets/mascot/'+pose,set=ext=>`${b}-240.${ext} 240w, ${b}-480.${ext} 480w`;return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><img src="${b}-480.webp" srcset="${set('webp')}" sizes="${sizes}" width="${w}" height="${h}" alt="" ${attrs}></picture>`;}
 function headArt(name){
@@ -374,7 +374,8 @@ function headTheme(key,notFound){
  if(isArchive||/^info-(elektronnyy-arhiv|arhiv-dokumentov|baza-dannyh)/.test(key))return ['arhivy',group==='Ресурсы'?'sky':'teal'];
  if(branchKeys.has(key)||group==='Филиалы')return ['biblioteki-rayona','teal'];
  if(key==='heritage'||group==='Краеведение')return ['kraevedenie','teal'];
- if(key==='resources'||group==='Ресурсы')return ['arhivy','sky'];
+ if(key==='resources'||group==='Ресурсы')return ['resursy','sky'];
+ if(group==='Коллегам')return ['kollegam','navy'];
  return ['o-biblioteke','navy'];
 }
 function pageHead(title,crumbs,intro,theme){const plain=String(title).replace(/<[^>]+>/g,'');
@@ -532,7 +533,7 @@ function startMotion(){
   animate('.hero-heading h1',{clipPath:['inset(0 0 100% 0)','inset(0 0 0% 0)'],y:[10,0]},{duration:.55,ease:calm,delay:.05});
   inView('.image-accordion',()=>{if(!motionAllowed())return;animate('.explore-panel',{clipPath:['inset(5% 0 0 0 round 12px)','inset(0% 0 0 0 round 12px)']},{duration:.5,ease:calm,delay:stagger(.06)});},{amount:.15});
   if(scroll&&matchMedia('(min-width:901px)').matches){
-   scroll(animate('.hero-art',{y:[0,50]},{ease:'linear'}),{target:$('.hero'),offset:['start start','end start']});
+   scroll(animate('.hero-art',{y:[0,30]},{ease:'linear'}),{target:$('.hero'),offset:['start start','end start']});
    scroll(animate('.heritage-landscape',{y:['-2.5%','2.5%'],scale:[1.06,1.06]},{ease:'linear'}),{target:$('.heritage'),offset:['start end','end start']});
   }
  }
