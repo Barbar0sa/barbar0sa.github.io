@@ -4,6 +4,9 @@
 @font-face{font-family:'lora';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/lora-cyrillic-wght-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'lora';font-style:italic;font-weight:100 900;font-display:swap;src:url('/assets/lora-latin-wght-italic.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+2116}
 @font-face{font-family:'lora';font-style:italic;font-weight:100 900;font-display:swap;src:url('/assets/lora-cyrillic-wght-italic.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'dela gothic one';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/dela-gothic-one-cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0020,U+00A0,U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'roboto';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/roboto-cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'roboto';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/roboto-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
  /* Surfaces */
  --paper:#fbf7ee;          /* page */
@@ -150,13 +153,6 @@ header nav a:hover{color:var(--accent)}
 .feature-info p{margin-top:6px}
 .circle-arrow{display:grid;place-items:center;width:45px;height:45px;border:1px solid var(--line-strong);border-radius:50%;flex-shrink:0;transition:background .25s,color .25s,transform .45s var(--ease)}
 .month-feature:hover .circle-arrow,.concert-feature:hover .circle-arrow{background:var(--ink);color:var(--on-ink)}
-.pushkin-band{container-type:inline-size;display:flex;align-items:center;gap:28px;margin-top:45px;padding:24px 30px;background:var(--surface-warm);border-radius:12px;position:relative;isolation:isolate;overflow:hidden;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.pushkin-symbol{font:2.5rem lora,serif;color:var(--accent-strong);display:flex;letter-spacing:-.16em;min-width:65px}
-.pushkin-symbol>span{transform:translateY(10px)}
-.pushkin-band h3{font-size:1.3rem}
-.pushkin-band p{font-size:.8rem;margin-top:5px;color:var(--muted-warm)}
-.band-action{display:flex;align-items:center;gap:25px;margin-left:auto;font-size:.85rem;white-space:nowrap}
-@container (max-width:40rem){.band-action{white-space:normal}}
 .image-accordion{display:flex;gap:16px;min-height:440px}
 .explore-panel{position:relative;display:flex;flex-direction:column;justify-content:flex-end;flex:1;overflow:hidden;border-radius:12px;transition:flex .55s var(--ease);color:var(--on-image);min-width:0}
 .explore-panel img{position:absolute;inset:0;height:100%;width:100%;transition:transform .6s var(--ease);filter:brightness(.82)}
@@ -278,7 +274,6 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
  .service-strip svg{right:4px;width:16px}
  .month-art,.concert-art{height:21.25rem}
  .panel-content{margin-left:20px}
- .band-action{font-size:.8rem;gap:12px}
  .journal-grid{gap:6%}
 }
 @media(max-width:900px){
@@ -301,8 +296,6 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
  .section-head>p{display:none}
  .month-art,.concert-art{height:18.75rem}
  .agenda-grid{gap:22px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
- .pushkin-band{flex-wrap:wrap;gap:18px}
- .band-action{margin-left:80px}
  .image-accordion{min-height:360px;gap:12px}
  .panel-word{font-size:1.5rem}
  .panel-link{font-size:.75rem;gap:7px}
@@ -353,12 +346,6 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
  .feature-info{padding-top:18px}
  .feature-info h3{font-size:1.2rem}
  .circle-arrow{width:40px;height:40px}
- .pushkin-band{margin-top:32px;padding:22px;gap:20px}
- .pushkin-symbol{min-width:48px;font-size:2rem}
- .pushkin-band>div{flex:1}
- .pushkin-band h3{font-size:1.1rem}
- .pushkin-band p{font-size:.75rem}
- .band-action{margin-left:0;padding-top:15px;border-top:1px solid var(--line-warm);width:100%;justify-content:space-between}
  .image-accordion{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
  .explore-panel{min-height:320px}
  .panel-content{margin-left:25px;margin-bottom:25px}
@@ -451,7 +438,7 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
 }
 .access-mode{font-size:1rem}
 .access-mode .reader,.access-mode .heritage,.access-mode .visit{gap:30px}
-.access-mode :is(.service-strip,.pushkin-band,.explore-panel,.dictation-cover,.reader,.reader-services,.heritage,.hero,.hours,.visit-info){background:var(--access-bg)!important;color:var(--access-fg)!important}
+.access-mode :is(.service-strip,.explore-panel,.dictation-cover,.reader,.reader-services,.heritage,.hero,.hours,.visit-info){background:var(--access-bg)!important;color:var(--access-fg)!important}
 .access-mode .hero:before,.access-mode .heritage:after,.access-mode .explore-panel:after,.access-mode .month-art:after{display:none}
 .access-mode .hero-heading{width:100%;padding:35px 5%}
 .access-mode .hero-art{position:relative;inset:auto;height:300px;opacity:1}
@@ -462,8 +449,6 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
 .access-mode .agenda-grid,.access-mode .journal-grid{grid-template-columns:minmax(0,1fr)}
 .access-mode .month-art,.access-mode .concert-art{height:auto}
 .access-mode .month-art img,.access-mode .concert-art img{max-height:300px}
-.access-mode .pushkin-band{flex-wrap:wrap;border:1px solid var(--access-fg)}
-.access-mode .band-action{white-space:normal;margin:0}
 .access-mode .image-accordion{min-height:0;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .access-mode .explore-panel{min-height:0;border:1px solid var(--access-fg);overflow:visible;flex:none!important;background:var(--access-bg);color:var(--access-fg)}
 .access-mode .explore-panel img{position:static;height:240px;filter:none}
@@ -490,8 +475,7 @@ dialog label{display:block;font-size:.9rem;margin-bottom:8px}
 .access-no-motion *,html:has(.access-no-motion){scroll-behavior:auto!important}
 .access-mode .image-accordion:focus-within .explore-panel{flex:none}
 .access-mode :is(.section-head,.footer-bottom,.visit-links){flex-wrap:wrap}
-.access-mode :is(.panel-word,.pushkin-symbol){line-height:1.4}
-.access-mode .pushkin-symbol{display:none}
+.access-mode .panel-word{line-height:1.4}
 .access-mode .text-link{white-space:normal}
 .access-mode .visit-hours{margin-top:25px}
 .access-mode .heritage-art-note{display:none}
@@ -664,14 +648,11 @@ summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
 html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),html.no-motion::view-transition-new(*){animation:none!important}
 .access-no-motion *,.access-no-motion *:before,.access-no-motion *:after{animation:none!important;transition:none!important}
 /* Hover details */
-.button svg,.reader-services a svg,.heritage-links a svg,.panel-link svg,.band-action svg,.visit-links a svg,.circle-arrow svg{transition:transform .4s var(--ease)}
-.button:hover svg,.reader-services a:hover svg,.heritage-links a:hover svg,.explore-panel:hover .panel-link svg,.pushkin-band:hover .band-action svg,.visit-links a:hover svg{transform:translateX(3px)}
+.button svg,.reader-services a svg,.heritage-links a svg,.panel-link svg,.visit-links a svg,.circle-arrow svg{transition:transform .4s var(--ease)}
+.button:hover svg,.reader-services a:hover svg,.heritage-links a:hover svg,.explore-panel:hover .panel-link svg,.visit-links a:hover svg{transform:translateX(3px)}
 .month-feature:hover .circle-arrow svg,.concert-feature:hover .circle-arrow svg{transform:translateX(3px)}
 .button:hover .i-ext,.text-link:hover .i-ext{transform:translate(2px,-2px)}
 .button:hover .i-phone,.visit-links a:hover .i-phone{transform:none}
-.pushkin-band:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 35%,color-mix(in srgb,var(--surface) 46.7%,transparent) 50%,transparent 65%);transform:translateX(-110%);transition:transform .6s ease}
-.pushkin-band:hover{transform:translateY(-1px);box-shadow:0 18px 34px -24px var(--muted-warm)}
-.pushkin-band:hover:after{transform:translateX(110%)}
 .dictation-cover strong{transition:transform .5s var(--ease)}
 .journal-lead:hover .dictation-cover strong{transform:rotate(-2deg) scale(1.02)}
 /* Open now */
@@ -757,7 +738,6 @@ html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),
 .tile-news{background:var(--tint-sea)}
 .tile-plan{background:var(--tint-stone)}
 #page[data-page="events"] .section-head{margin-top:80px}
-#page[data-page="events"] .pushkin-band{margin-top:30px}
 @media(max-width:900px){
  .events-hero{padding:32px 24px 28px;gap:32px}
  .month-strip{grid-template-columns:repeat(31,44px)}
@@ -864,7 +844,7 @@ html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),
 .access-mode .topbar #accessibility{background:var(--access-fg);color:var(--access-bg)!important;border-color:var(--access-fg);white-space:normal;max-width:100%;text-align:left}
 .access-mode .topbar #accessibility span{color:var(--access-bg)!important}
 /* Functional text floors (60+ audience) */
-.meta,.service-strip small,.panel-link,.pushkin-band p,.reader-title small,.online-card small,.text-link,.band-action,.footer-bottom,.past-events small,.hours small,.event-flag{font-size:.875rem}
+.meta,.service-strip small,.panel-link,.reader-title small,.online-card small,.text-link,.footer-bottom,.past-events small,.hours small,.event-flag{font-size:.875rem}
 .feature-info p{font-size:.9rem}
 .panel-content p{font-size:.95rem}
 .footer-grid a,.social-links a,.partners a{font-size:.9375rem}
@@ -874,7 +854,7 @@ html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),
 .soon-badge,.today-badge{font-size:.875rem}
 .inner-page>p,.inner-page p,.source-content{font-size:1.0625rem;color:var(--ink)}
 @media(max-width:600px){
- .meta,.service-strip small,.feature-info p,.panel-link,.pushkin-band p,.reader-title small,.online-card small,.text-link,.band-action,.panel-content p{font-size:.9375rem}
+ .meta,.service-strip small,.feature-info p,.panel-link,.reader-title small,.online-card small,.text-link,.panel-content p{font-size:.9375rem}
  .footer-grid a{font-size:.9375rem}
  .hero-heading p{font-size:1rem;max-width:205px;text-wrap:pretty}
  .inner-page>p{font-size:1.0625rem}
@@ -905,7 +885,7 @@ html.no-motion::view-transition-group(*),html.no-motion::view-transition-old(*),
 /* Low-vision mode: explore panels — solid scheme colours */
 /* Low-vision mode: underline only real link text, not every descendant of card links */
 .access-mode a:has(:is(div,h3,img,strong,small,.panel-word)){text-decoration:none}
-.access-mode a :is(h3,.panel-link,.text-link,.band-action,.online-card strong),.access-mode .service-strip a>span,.access-mode .online-card strong{text-decoration:underline;text-underline-offset:.2em}
+.access-mode a :is(h3,.panel-link,.text-link,.online-card strong),.access-mode .service-strip a>span,.access-mode .online-card strong{text-decoration:underline;text-underline-offset:.2em}
 /* Low-vision mode: events calendar and badges — shape/outline, not colour */
 .access-mode strong{color:inherit}
 .access-mode .event-feature-when strong{color:var(--access-fg)}
@@ -1086,8 +1066,7 @@ header{container:masthead/inline-size}
 .access-settings.is-off .setting-options label:has(input:checked){background:transparent;border-style:dashed;border-color:var(--muted)}
 /* Pressed states: settle back down on press; no movement with reduced motion or in the low-vision mode */
 .button:active,.icon-btn:active{transform:translateY(1px)}
-.tile:active,.online-card:active,.pushkin-band:active,.month-strip a.has-event:active{transform:none}
-.pushkin-band:active{box-shadow:none}
+.tile:active,.online-card:active,.month-strip a.has-event:active{transform:none}
 @media(prefers-reduced-motion:reduce){.button:active,.icon-btn:active{transform:none}}
 .access-no-motion :is(.button,.icon-btn):active{transform:none}
 
@@ -1474,9 +1453,6 @@ dialog{border-radius:var(--r-lg);padding:32px}
 }
 .programme-art{background:var(--sky-tint)}
 .month-art,.concert-art{border-radius:var(--r-lg)}
-.pushkin-band{border-radius:var(--r-md);background:var(--sun-tint)}
-.pushkin-symbol{color:var(--rowan-ink)}
-.pushkin-band p{color:var(--ink)}
 .facts-row span,.tile small{color:var(--ink)}
 .explore-panel{border-radius:var(--r-lg)}
 .reader{margin:0 16px;border-radius:var(--r-lg);background:var(--teal-tint)}
@@ -1582,3 +1558,45 @@ body:not(.access-mode) .hero.is-light .hero-heading{width:min(46%,620px)}
 @media(min-width:901px) and (max-width:1200px){
  body:not(.access-mode) .hero.is-light .hero-art{inset:auto 0 0 auto;height:86%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%);mask-image:linear-gradient(180deg,transparent,#000 14%)}
 }
+/* «Пушкинская карта»: вставка по «Краткому руководству по использованию визуального стиля» (docs/PUSHKIN.md).
+   Шрифты только Dela Gothic One + Roboto, фон сплошной (без фото), цвета программы. Файлы шрифтов грузятся только там, где есть вставка. */
+.pk-insert{--pk-ink:#1d1d24;--pk-soft:#c9c9d1;--pk-raspberry:#e6007e;--pk-neon:#44d62c;--pk-cyan:#00aeef;--pk-yellow:#ffed00;
+ display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);margin-top:45px;background:var(--pk-ink);color:#fff;border-radius:var(--r-md);overflow:hidden;font-family:roboto,Arial,sans-serif}
+.pk-main{padding:34px 38px 36px;min-width:0}
+.pk-insert .pk-kicker{display:flex;align-items:center;gap:10px;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pk-neon)}
+.pk-insert .pk-kicker:before{content:'';width:10px;height:10px;border-radius:50%;background:var(--pk-cyan);flex:none}
+.pk-insert .pk-title{margin:14px 0 0;font:400 clamp(1.55rem,1.05rem + 1.5vw,2.35rem)/1.12 'dela gothic one',roboto,sans-serif;letter-spacing:0;color:#fff;max-width:22ch;text-wrap:balance}
+.pk-insert .pk-text{margin-top:14px;max-width:52ch;font-size:1rem;line-height:1.55;color:var(--pk-soft)}
+.pk-nw{white-space:nowrap}
+.pk-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:24px}
+.pk-insert .pk-button{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 22px;border-radius:8px;background:var(--pk-neon);color:var(--pk-ink);font:400 .95rem/1.2 'dela gothic one',roboto,sans-serif;text-decoration:none;transition:background-color .2s ease}
+.pk-insert .pk-button svg{width:18px;height:18px;flex:none}
+.pk-insert .pk-button:hover{background:var(--pk-yellow)}
+.pk-insert .pk-link{color:#fff;font-size:1rem;text-decoration:underline;text-decoration-color:var(--pk-neon);text-decoration-thickness:2px;text-underline-offset:.25em}
+.pk-insert .pk-link:hover{color:var(--pk-neon)}
+.pk-insert :is(.pk-button,.pk-link):focus-visible{outline:3px solid var(--pk-cyan);outline-offset:3px}
+.pk-brand{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:34px 32px;background:var(--pk-raspberry);min-width:0}
+.pk-brand:before{content:'';width:56px;height:8px;background:var(--pk-yellow)}
+.pk-logo{display:block;width:min(160px,100%);height:auto}
+.pk-insert .pk-slogan{font:400 clamp(1.45rem,1rem + 1.3vw,2.15rem)/1.04 'dela gothic one',roboto,sans-serif;text-transform:uppercase;color:#fff;overflow-wrap:anywhere}
+#page[data-page="events"] .pk-insert{margin-top:30px}
+@media(max-width:760px){
+ .pk-insert{grid-template-columns:minmax(0,1fr);margin-top:32px}
+ .pk-main{padding:26px 22px 28px}
+ .pk-brand{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:22px}
+ .pk-brand:before{display:none}
+ .pk-insert .pk-button{width:100%;justify-content:space-between}
+}
+/* Версия для слабовидящих: цвета активной схемы, без неона и фирменных шрифтов, одна колонка */
+.access-mode .pk-insert{display:block;background:var(--access-bg);color:var(--access-fg);border:2px solid var(--access-fg);border-radius:0}
+.access-mode .pk-main{padding:25px}
+.access-mode .pk-brand{display:block;padding:20px 25px;background:var(--access-bg);border-top:2px solid var(--access-fg)}
+.access-mode .pk-brand:before,.access-mode .pk-kicker:before{display:none}
+.access-mode .pk-insert :is(.pk-title,.pk-slogan,.pk-button){font-family:'manrope',Arial,sans-serif;font-weight:700;letter-spacing:normal}
+.access-mode .pk-insert .pk-title{max-width:none;font-size:1.6rem;line-height:1.25}
+.access-mode .pk-insert .pk-slogan{font-size:1.3rem;line-height:1.25;text-transform:none}
+.access-mode .pk-insert .pk-text{max-width:65ch}
+.access-mode .pk-insert .pk-button{width:auto;background:var(--access-bg);color:var(--access-fg);border:2px solid var(--access-fg);border-radius:0}
+.access-mode .pk-insert .pk-link{text-decoration-color:currentColor}
+.access-mode .pk-insert :is(.pk-button,.pk-link):focus-visible{outline-color:var(--access-fg)}
+
