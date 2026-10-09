@@ -1,0 +1,157 @@
+/* Карта библиотек Тарского района (site/map.js). Цвета — токены из style.css с запасными значениями. */
+.lm{
+  --lm-ink:var(--ink,#142339);
+  --lm-muted:var(--muted,#4f5862);
+  --lm-paper:var(--surface,#fff);
+  --lm-land:var(--surface-2,#f4ecdc);
+  --lm-line:var(--line-strong,#cfc4ad);
+  --lm-marker:var(--navy,#07182d);
+  --lm-marker-ring:var(--surface,#fff);
+  --lm-central:var(--rowan,#f76b1c);
+  --lm-central-ink:var(--rowan-ink,#a8440b);
+  --lm-select:var(--sun,#f8bf1c);
+  --lm-focus:var(--focus,#a8440b);
+  --lm-radius:var(--r-md,20px);
+  --lm-radius-sm:var(--r-sm,14px);
+  --lm-dot:14px;
+  color:var(--lm-ink);
+  font-size:1rem;
+}
+.lm *,.lm *::before,.lm *::after{box-sizing:border-box}
+.lm [hidden]{display:none!important}
+.lm-status{margin:0;padding:1rem 0;color:var(--lm-muted)}
+
+/* ---------- поиск ---------- */
+.lm-search{display:grid;gap:.4rem;margin:0 0 1.25rem;max-width:34rem}
+.lm-label{font-weight:700;font-size:1.125rem}
+.lm-input{width:100%;min-height:48px;padding:.65rem .9rem;font:inherit;font-size:1.0625rem;color:var(--lm-ink);background:var(--lm-paper);border:2px solid var(--control-strong,#919aa4);border-radius:var(--lm-radius-sm);-webkit-appearance:none;appearance:none}
+.lm-input:focus-visible{outline:3px solid var(--lm-focus);outline-offset:2px;border-color:var(--lm-ink)}
+.lm-count{margin:0;font-size:.9375rem;color:var(--lm-muted)}
+
+/* ---------- раскладка ---------- */
+.lm-body{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:1.5rem;align-items:start}
+.lm-body.no-map{grid-template-columns:minmax(0,1fr)}
+.lm-main{display:grid;gap:1rem;min-width:0}
+.lm-side{min-width:0}
+@media (max-width:860px){
+  .lm-body{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ---------- карта ---------- */
+.lm-map{margin:0;position:relative;background:var(--lm-paper);border:1px solid var(--line,#e4dccb);border-radius:var(--lm-radius);padding:.75rem;overflow:hidden}
+.lm-mapbox{position:relative;width:100%;aspect-ratio:600/476}
+.lm-basemap{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lm-district{fill:var(--lm-land);stroke:var(--lm-line);stroke-width:2;stroke-linejoin:round}
+.lm-markers{position:absolute;inset:0}
+.lm-townlabel{position:absolute;transform:translate(-100%,-50%) translate(-1.3em,2.1em);font-weight:700;font-size:.9375rem;color:var(--lm-ink);background:color-mix(in srgb,var(--lm-paper) 82%,transparent);padding:0 .3em;border-radius:6px;pointer-events:none;white-space:nowrap}
+.lm-attr-inline{position:absolute;right:0;bottom:0;font-size:.75rem;color:var(--lm-muted);background:color-mix(in srgb,var(--lm-paper) 85%,transparent);padding:.1em .4em;border-radius:6px 0 0 0;z-index:6;text-decoration:none}
+.lm-attr-inline:hover{text-decoration:underline}
+.lm-attr-inline:focus-visible{outline:3px solid var(--lm-focus);outline-offset:1px}
+
+/* маркер: кнопка 32×32 (удобно пальцу), точка внутри */
+.lm-marker{position:absolute;width:32px;height:32px;margin:0;padding:0;border:0;background:none;border-radius:50%;cursor:pointer;
+  transform:translate(-50%,-50%) translate(calc(var(--dx,0em) * var(--lm-fan,1)),calc(var(--dy,0em) * var(--lm-fan,1)));display:grid;place-items:center;color:var(--lm-ink);-webkit-tap-highlight-color:transparent;z-index:1}
+.lm-dot{display:block;width:var(--lm-dot);height:var(--lm-dot);border-radius:50%;background:var(--lm-marker);box-shadow:0 0 0 2px var(--lm-marker-ring),0 1px 3px rgba(7,24,45,.35)}
+.lm-marker.is-central{z-index:3}
+.lm-marker.is-central .lm-dot{width:22px;height:22px;background:var(--lm-central);box-shadow:0 0 0 3px var(--lm-marker-ring),0 0 0 5px var(--lm-central-ink)}
+.lm-marker.lm-children .lm-dot,.lm-marker.lm-city .lm-dot{background:var(--sky-ink,#1d5f96)}
+.lm-marker.is-suspended .lm-dot,.lm-marker.is-unknown .lm-dot{background:var(--lm-marker-ring);box-shadow:0 0 0 3px var(--lm-muted)}
+.lm-marker.is-dim{opacity:.28}
+.lm-marker.is-match .lm-dot{box-shadow:0 0 0 2px var(--lm-marker-ring),0 0 0 4px var(--lm-ink)}
+.lm-marker.is-selected{z-index:4;opacity:1}
+.lm-marker.is-selected .lm-dot{width:24px;height:24px;background:var(--lm-select);box-shadow:0 0 0 3px var(--lm-ink),0 2px 6px rgba(7,24,45,.4)}
+.lm-marker:focus-visible{outline:3px solid var(--lm-focus);outline-offset:1px;z-index:5}
+.lm-marker:focus:not(:focus-visible){outline:none}
+.lm-tip{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);margin-bottom:2px;padding:.15em .45em;font-size:.8125rem;font-weight:700;line-height:1.3;white-space:nowrap;color:var(--on-ink,#fff);background:var(--lm-ink);border-radius:6px;pointer-events:none;opacity:0;visibility:hidden}
+.lm-marker.is-selected .lm-tip,.lm-marker:focus-visible .lm-tip{opacity:1;visibility:visible}
+@media (hover:hover){.lm-marker:hover .lm-tip{opacity:1;visibility:visible}.lm-marker:hover{z-index:5}}
+
+.lm-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem;margin-top:.6rem;font-size:.875rem;line-height:1.45;color:var(--lm-muted)}
+.lm-skip{position:absolute;left:.75rem;top:.75rem;z-index:6;padding:.4rem .7rem;background:var(--lm-ink);color:var(--on-ink,#fff);border-radius:8px;transform:translateY(-200%);text-decoration:none}
+.lm-skip:focus{transform:none;outline:3px solid var(--lm-select);outline-offset:2px}
+
+/* ---------- карточка ---------- */
+.lm-card{background:var(--card,#fff);border:1px solid var(--line,#e4dccb);border-left:6px solid var(--lm-central);border-radius:var(--lm-radius);padding:1.1rem 1.25rem;box-shadow:var(--shadow-soft,none);scroll-margin:1rem}
+.lm-card:focus{outline:none}
+.lm-card:not(.is-filled){border-left-color:var(--line,#e4dccb)}
+.lm-card-hint{margin:0;color:var(--lm-muted)}
+.lm-card-title{margin:0 0 .2rem;font-size:1.25rem;line-height:1.3;font-weight:700}
+.lm-card-place{margin:0 0 .6rem;color:var(--lm-muted)}
+.lm-card-status{margin:.4rem 0 .6rem;padding:.5rem .7rem;background:var(--accent-soft,#fde0cc);border-radius:10px;font-weight:600}
+.lm-card-facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.35rem 1rem;margin:.6rem 0 0}
+.lm-card-facts dt{font-weight:700}
+.lm-card-facts dd{margin:0;overflow-wrap:anywhere}
+.lm-card-facts a{color:var(--lm-ink);font-weight:700;text-underline-offset:.18em}
+.lm-hours{margin:0;padding:0;list-style:none}
+.lm-hours li+li{margin-top:.15rem}
+.lm-card-note{margin:.7rem 0 0;font-size:.9375rem;color:var(--lm-muted)}
+.lm-card-link{margin:.9rem 0 0}
+.lm-card-link a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border-radius:999px;background:var(--lm-ink);color:var(--on-ink,#fff);font-weight:700;text-decoration:none}
+.lm-card-link a::after{content:"→";margin-left:.5em}
+.lm-card-link a:focus-visible{outline:3px solid var(--lm-focus);outline-offset:3px}
+@media (max-width:520px){
+  .lm-card-facts{grid-template-columns:minmax(0,1fr);gap:.1rem}
+  .lm-card-facts dd{margin-bottom:.5rem}
+}
+
+/* ---------- список ---------- */
+.lm-list{max-height:min(78vh,52rem);overflow-y:auto;overscroll-behavior:contain;padding:.25rem .25rem .25rem 0;scroll-padding:.5rem}
+.lm-list:focus{outline:none}
+@media (max-width:860px){.lm-list{max-height:none;overflow:visible}}
+.lm-group+.lm-group{margin-top:1.25rem}
+.lm-group-title{margin:0 0 .5rem;font-size:1.0625rem;font-weight:700}
+.lm-items{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.lm-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;width:100%;min-height:48px;margin:0;padding:.6rem .85rem;text-align:left;font:inherit;color:var(--lm-ink);background:var(--lm-paper);border:1px solid var(--line,#e4dccb);border-radius:var(--lm-radius-sm);cursor:pointer}
+.lm-item-place{font-weight:700}
+.lm-item-sub{color:var(--lm-muted);font-size:.9375rem}
+.lm-item.is-central{border-color:var(--lm-central-ink)}
+.lm-item.is-selected{background:var(--sun-tint,#fdeebf);border-color:var(--lm-ink);box-shadow:inset 4px 0 0 var(--lm-ink)}
+.lm-item:focus-visible{outline:3px solid var(--lm-focus);outline-offset:2px}
+@media (hover:hover){.lm-item:hover{border-color:var(--lm-ink)}}
+.lm-badge{font-size:.8125rem;font-weight:600;padding:.05em .5em;border-radius:999px;background:var(--surface-2,#f4ecdc);color:var(--muted-strong,#3f4a55)}
+.lm-group-closed .lm-item{background:transparent;color:var(--lm-muted)}
+
+.lm-empty{display:flex;align-items:center;gap:1rem;padding:1rem;border:1px dashed var(--lm-line);border-radius:var(--lm-radius)}
+.lm-empty p{margin:0}
+.lm-empty-title{font-weight:700;font-size:1.125rem;margin-bottom:.25rem!important}
+.lm-owl img{display:block;width:96px;height:auto}
+@media (max-width:420px){.lm-empty{flex-direction:column;text-align:center}}
+
+/* ---------- телефон ---------- */
+@media (max-width:600px){
+  .lm:not(.x){--lm-dot:12px;--lm-fan:.7}
+  .lm-map{padding:.4rem}
+  .lm-marker.is-central .lm-dot{width:18px;height:18px}
+  .lm-townlabel{font-size:.8125rem}
+}
+
+/* ---------- версия для слабовидящих ---------- */
+.access-mode .lm{--lm-dot:22px;--lm-marker:var(--access-fg);--lm-marker-ring:var(--access-bg);--lm-central:var(--access-fg);--lm-central-ink:var(--access-fg);--lm-select:var(--access-bg);--lm-land:var(--access-bg);--lm-line:var(--access-fg);--lm-paper:var(--access-bg);--lm-ink:var(--access-fg);--lm-muted:var(--access-fg)}
+.access-mode .lm-map,.access-mode .lm-card,.access-mode .lm-item,.access-mode .lm-empty{border:2px solid var(--access-fg);box-shadow:none;background:var(--access-bg)}
+.access-mode .lm-district{stroke-width:3}
+.access-mode .lm-marker{width:40px;height:40px}
+.access-mode .lm-marker.is-central .lm-dot{width:30px;height:30px;box-shadow:0 0 0 3px var(--access-bg),0 0 0 6px var(--access-fg)}
+.access-mode .lm-marker.lm-children .lm-dot,.access-mode .lm-marker.lm-city .lm-dot{background:var(--access-fg)}
+.access-mode .lm-marker.is-selected .lm-dot{width:30px;height:30px;background:var(--access-bg);box-shadow:0 0 0 5px var(--access-fg)}
+.access-mode .lm-marker.is-dim{opacity:.35}
+.access-mode .lm-tip{color:var(--access-bg)!important;background:var(--access-fg);font-size:1rem}
+.access-mode .lm-townlabel{background:var(--access-bg);border:1px solid var(--access-fg)}
+.access-mode .lm-attr-inline{background:var(--access-bg)}
+.access-mode .lm-item.is-selected{background:var(--access-fg);box-shadow:none}
+.access-mode .lm-item.is-selected :is(span){color:var(--access-bg)!important}
+.access-mode .lm-badge{background:var(--access-bg);border:1px solid var(--access-fg);color:var(--access-fg)}
+.access-mode .lm-card{border-left-width:8px}
+.access-mode .lm-card-status{background:var(--access-bg);border:2px solid var(--access-fg)}
+.access-mode .lm-card-link a{background:var(--access-bg);color:var(--access-fg)!important;border:2px solid var(--access-fg);text-decoration:underline}
+.access-mode .lm-skip{background:var(--access-fg);color:var(--access-bg)!important}
+.access-mode .lm-list{max-height:none;overflow:visible}
+.access-mode .lm-body{grid-template-columns:minmax(0,1fr)}
+/* «Скрыть изображения»: остаётся только список с поиском и карточкой */
+.access-no-images .lm-map,.access-no-images .lm-owl{display:none}
+.access-no-motion .lm *{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){.lm *{animation:none!important;transition:none!important}}
+@media (forced-colors:active){
+  .lm-dot{forced-color-adjust:none;background:CanvasText;box-shadow:0 0 0 2px Canvas}
+  .lm-marker.is-selected .lm-dot{background:Highlight}
+  .lm-district{stroke:CanvasText;fill:Canvas}
+}

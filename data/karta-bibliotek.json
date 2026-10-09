@@ -1,0 +1,1099 @@
+{
+ "title": "Библиотеки Тарского района",
+ "updated": "2026-10-09",
+ "note": "Адреса, телефоны и режим работы перенесены с прежнего сайта библиотеки (разделы «Контакты всех библиотек», «Структура» и страницы филиалов). Точка на карте — центр населённого пункта, а не здание библиотеки.",
+ "attribution": {
+  "text": "© участники OpenStreetMap",
+  "url": "https://www.openstreetmap.org/copyright",
+  "license": "ODbL 1.0",
+  "details": "Координаты населённых пунктов и граница района: OpenStreetMap через Nominatim (граница — отношение 1314115)."
+ },
+ "libraries": [
+  {
+   "id": "crb",
+   "number": null,
+   "kind": "central",
+   "name": "Центральная районная библиотека",
+   "settlement": "Тара",
+   "settlementType": "г.",
+   "address": "ул. Александровская, 58",
+   "postcode": "646530",
+   "phone": "8 (38171) 2-12-42",
+   "phoneHref": "+73817121242",
+   "email": "tara_libraru79@mail.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–19:00",
+    "Суббота: выходной",
+    "Воскресенье: 10:00–17:00",
+    "Центр «Молодёжный квартал» во вторник работает до 22:00",
+    "Последний день месяца – санитарный"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/kontakty/",
+   "central": true,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "Структура (/struktura/)"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.90259,
+    "lon": 74.36987,
+    "precision": "settlement",
+    "osm": "relation/7226665",
+    "osmPlace": "town"
+   }
+  },
+  {
+   "id": "crdb",
+   "number": null,
+   "kind": "children",
+   "name": "Центральная районная детская библиотека",
+   "settlement": "Тара",
+   "settlementType": "г.",
+   "address": "ул. Александровская, 58",
+   "postcode": "646530",
+   "phone": "8 (38171) 2-20-20",
+   "phoneHref": "+73817122020",
+   "email": "detbibl_tara@mail.ru",
+   "hours": [
+    "Понедельник – пятница: 9:00–18:00",
+    "Суббота: выходной",
+    "Воскресенье: 10:00–17:00",
+    "Последний день месяца – санитарный"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/struktura/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "Структура (/struktura/)"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.90259,
+    "lon": 74.36987,
+    "precision": "settlement",
+    "osm": "relation/7226665",
+    "osmPlace": "town"
+   }
+  },
+  {
+   "id": "f1",
+   "number": 1,
+   "kind": "city",
+   "name": "Городская библиотека-филиал № 1",
+   "settlement": "Тара",
+   "settlementType": "г.",
+   "address": "ул. Радищева, д. 17",
+   "postcode": "646532",
+   "phone": "8 (38171) 2-00-59",
+   "phoneHref": "+73817120059",
+   "email": "biblioteka_tara@mail.ru",
+   "hours": [
+    "Понедельник – пятница: 9:00–17:30",
+    "Перерыв: 13:00–13:30",
+    "Суббота, воскресенье: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/gorodskaya-biblioteka-filial-no-1/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.90259,
+    "lon": 74.36987,
+    "precision": "settlement",
+    "osm": "relation/7226665",
+    "osmPlace": "town"
+   }
+  },
+  {
+   "id": "f3",
+   "number": 3,
+   "kind": "city",
+   "name": "Городская библиотека-филиал № 3",
+   "settlement": "Тара",
+   "settlementType": "г.",
+   "address": "ул. Елецкого, д. 28, строение 1",
+   "postcode": "646530",
+   "phone": "8 (38171) 2-81-05",
+   "phoneHref": "+73817128105",
+   "email": "filial3-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 8:30–17:00",
+    "Перерыв: 12:30–13:00",
+    "Суббота, воскресенье: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/gorodskaya-biblioteka-filial-no-3/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.90259,
+    "lon": 74.36987,
+    "precision": "settlement",
+    "osm": "relation/7226665",
+    "osmPlace": "town"
+   }
+  },
+  {
+   "id": "f5",
+   "number": 5,
+   "kind": "village",
+   "name": "Екатерининская сельская библиотека-филиал № 5",
+   "settlement": "Екатерининское",
+   "settlementType": "с.",
+   "address": "ул. Советская, д. 48",
+   "postcode": "646510",
+   "phone": "8 (38171) 31-2-62",
+   "phoneHref": "+73817131262",
+   "email": "ekaterin-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00, без перерыва",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-5-s-ekaterininskoe/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.87727,
+    "lon": 74.58028,
+    "precision": "settlement",
+    "osm": "way/243027079",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f6",
+   "number": 6,
+   "kind": "village",
+   "name": "Васисская сельская библиотека-филиал № 6",
+   "settlement": "Васисс",
+   "settlementType": "с.",
+   "address": "ул. Ленина, д. 7",
+   "postcode": "646527",
+   "phone": "8 (38171) 33-1-90",
+   "phoneHref": "+73817133190",
+   "email": "vasiss-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – четверг: 10:00–16:30",
+    "Перерыв: 13:00–13:30",
+    "Воскресенье: 10:00–13:00",
+    "Пятница, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-6-s-vasiss/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.36019,
+    "lon": 74.74368,
+    "precision": "settlement",
+    "osm": "way/998303620",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f8",
+   "number": 8,
+   "kind": "village",
+   "name": "Заливинская сельская библиотека-филиал № 8",
+   "settlement": "Заливино",
+   "settlementType": "с.",
+   "address": "ул. Советская, д. 12а",
+   "postcode": "646519",
+   "phone": "8 (38171) 42-2-74",
+   "phoneHref": "+73817142274",
+   "email": "zaliv-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-8-s-zalivino/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.79225,
+    "lon": 74.51374,
+    "precision": "settlement",
+    "osm": "way/157043415",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f9",
+   "number": 9,
+   "kind": "village",
+   "name": "Кореневская сельская библиотека-филиал № 9",
+   "settlement": "Коренево",
+   "settlementType": "д.",
+   "address": "ул. Сельскохозяйственная, д. 27а",
+   "postcode": "646519",
+   "phone": "8 (38171) 54-7-43",
+   "phoneHref": "+73817154743",
+   "email": "korenevo-bibl@yandex.ru",
+   "hours": [],
+   "status": "open",
+   "statusNote": "",
+   "notes": [
+    "Адрес и телефон подтверждены по базе библиотек РГДБ (stat.rgdb.ru). Режим работы нигде не опубликован, уточните по телефону."
+   ],
+   "path": "/biblioteka-filial-no-9-d-kornevo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.7511,
+    "lon": 74.51565,
+    "precision": "settlement",
+    "osm": "node/1414950163",
+    "osmPlace": "hamlet"
+   }
+  },
+  {
+   "id": "f10",
+   "number": 10,
+   "kind": "village",
+   "name": "Черняевская сельская библиотека-филиал № 10",
+   "settlement": "Черняево",
+   "settlementType": "с.",
+   "address": "ул. Трудовая, д. 35",
+   "postcode": "646501",
+   "phone": "8 (38171) 55-1-49",
+   "phoneHref": "+73817155149",
+   "email": "chern-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:00–15:00",
+    "Воскресенье: 13:00–19:00",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-10-s-chernyaevo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.69463,
+    "lon": 74.5228,
+    "precision": "settlement",
+    "osm": "relation/18112783",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f11",
+   "number": 11,
+   "kind": "village",
+   "name": "Кольтюгинская сельская библиотека-филиал № 11",
+   "settlement": "Кольтюгино",
+   "settlementType": "д.",
+   "address": "ул. Хуторская, д. 31",
+   "postcode": "646502",
+   "phone": "8 (38171) 41-3-39",
+   "phoneHref": "+73817141339",
+   "email": "biblion2023@mail.ru",
+   "hours": [
+    "Понедельник, среда, четверг, пятница: 10:00–18:00",
+    "Перерыв: 13:00–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Вторник, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-11-s-koltyugino/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.68811,
+    "lon": 74.31129,
+    "precision": "settlement",
+    "osm": "relation/18112806",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f12",
+   "number": 12,
+   "kind": "village",
+   "name": "Чекрушанская сельская библиотека-филиал № 12",
+   "settlement": "Чекрушево",
+   "settlementType": "с.",
+   "address": "ул. Первомайская, д. 23",
+   "postcode": "646504",
+   "phone": "8 (38171) 2-00-12",
+   "phoneHref": "+73817120012",
+   "email": "bibl-chekrushevo-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница, воскресенье: 10:00–17:00",
+    "Перерыв: 13:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-12-s-chekrushevo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.91999,
+    "lon": 74.26905,
+    "precision": "settlement",
+    "osm": "relation/18113289",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f13",
+   "number": 13,
+   "kind": "village",
+   "name": "Вставская сельская библиотека-филиал № 13",
+   "settlement": "Вставское",
+   "settlementType": "с.",
+   "address": "ул. Советская, д. 45",
+   "postcode": "646505",
+   "phone": "8 (38171) 51-1-46",
+   "phoneHref": "+73817151146",
+   "email": "vstav-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – четверг: 10:00–17:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:00",
+    "Пятница, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-13-s-vstavskoe/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.8592,
+    "lon": 73.9702,
+    "precision": "settlement",
+    "osm": "way/1320091173",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f14",
+   "number": 14,
+   "kind": "village",
+   "name": "Больше-Туралинская сельская библиотека-филиал № 14",
+   "settlement": "Большие Туралы",
+   "settlementType": "с.",
+   "address": "ул. Школьная, д. 22",
+   "postcode": "646506",
+   "phone": "8 (38171) 51-3-17",
+   "phoneHref": "+73817151317",
+   "email": "bturali-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – четверг: 10:00–17:00",
+    "Перерыв: 13:00–14:00",
+    "Пятница, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [
+    "Адрес и телефон подтверждены по базе библиотек РГДБ (stat.rgdb.ru). На странице филиала прежнего сайта был указан д. 45."
+   ],
+   "path": "/biblioteka-filial-no-14-s-bolshie-turaly/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.75529,
+    "lon": 74.00082,
+    "precision": "settlement",
+    "osm": "way/1320090324",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f15",
+   "number": 15,
+   "kind": "village",
+   "name": "Ложниковская сельская библиотека-филиал № 15",
+   "settlement": "Ложниково",
+   "settlementType": "с.",
+   "address": "ул. Зеленая, д. 24",
+   "postcode": "646507",
+   "phone": "8 (38171) 53-2-41",
+   "phoneHref": "+73817153241",
+   "email": "lozhnikowo.selo@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-15-s-lozhnikovo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.89227,
+    "lon": 73.87603,
+    "precision": "settlement",
+    "osm": "way/1320092383",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f17",
+   "number": 17,
+   "kind": "village",
+   "name": "Библиотека-филиал № 17 с. Соусканово",
+   "settlement": "Соусканово",
+   "settlementType": "с.",
+   "address": "ул. Центральная, д. 18",
+   "postcode": "",
+   "phone": "",
+   "phoneHref": "",
+   "email": "",
+   "hours": [],
+   "status": "closed",
+   "statusNote": "Закрыта: на странице филиала опубликовано распоряжение о закрытии.",
+   "notes": [],
+   "path": "/biblioteka-filial-no-17-s-souskanovo/",
+   "central": false,
+   "sources": [
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.97971,
+    "lon": 73.82122,
+    "precision": "settlement",
+    "osm": "way/778830334",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f18",
+   "number": 18,
+   "kind": "village",
+   "name": "Орловская сельская библиотека-филиал № 18",
+   "settlement": "Орлово",
+   "settlementType": "с.",
+   "address": "ул. Блочная, д. 14",
+   "postcode": "646503",
+   "phone": "8 (38171) 58-1-50",
+   "phoneHref": "+73817158150",
+   "email": "orlovo-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 9:00–17:00",
+    "Перерыв: 13:00–14:30",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-18-s-orlovo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.6601,
+    "lon": 74.07228,
+    "precision": "settlement",
+    "osm": "way/1320059134",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f19",
+   "number": 19,
+   "kind": "village",
+   "name": "Самсоновская сельская библиотека-филиал № 19",
+   "settlement": "Самсоново",
+   "settlementType": "с.",
+   "address": "ул. Комсомольская, д. 35",
+   "postcode": "646520",
+   "phone": "8 (38171) 43-3-13",
+   "phoneHref": "+73817143313",
+   "email": "samson-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-19-s-samsonovo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.9731,
+    "lon": 74.35262,
+    "precision": "settlement",
+    "osm": "way/1320094447",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f21",
+   "number": 21,
+   "kind": "village",
+   "name": "Мартюшевская сельская библиотека-филиал № 21",
+   "settlement": "Мартюшево",
+   "settlementType": "с.",
+   "address": "ул. Комсомольская, д. 5",
+   "postcode": "646517",
+   "phone": "8 (38171) 50-6-15",
+   "phoneHref": "+73817150615",
+   "email": "martushi-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-21-s-martyushevo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.11674,
+    "lon": 74.51592,
+    "precision": "settlement",
+    "osm": "way/1320342585",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f22",
+   "number": 22,
+   "kind": "village",
+   "name": "Баженовская сельская библиотека-филиал № 22",
+   "settlement": "Баженово",
+   "settlementType": "с.",
+   "address": "ул. Центральная, д. 44",
+   "postcode": "646517",
+   "phone": "8 (38171) 5-06-20",
+   "phoneHref": "+73817150620",
+   "email": "bajenovo-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – четверг: 10:00–17:00",
+    "Перерыв: 13:00–14:00",
+    "Воскресенье: 10:00–13:30",
+    "Пятница, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [
+    "Телефон по базе библиотек РГДБ (stat.rgdb.ru). На прежнем сайте были указаны мобильные номера 8-913-638-30-91 и 8-983-520-0542."
+   ],
+   "path": "/biblioteka-filial-no-22-s-bazhenovo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.05835,
+    "lon": 74.51148,
+    "precision": "settlement",
+    "osm": "way/1320341364",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f23",
+   "number": 23,
+   "kind": "village",
+   "name": "Егоровская сельская библиотека-филиал № 23",
+   "settlement": "Егоровка",
+   "settlementType": "с.",
+   "address": "ул. Школьная, д. 3",
+   "postcode": "646529",
+   "phone": "8 (38171) 54-1-75",
+   "phoneHref": "+73817154175",
+   "email": "egorovka-bibl@yandex.ru",
+   "hours": [
+    "Понедельник, среда, пятница, воскресенье: 11:00–15:30, без перерыва",
+    "Вторник, четверг, суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-23-s-egorovka/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.16837,
+    "lon": 74.89814,
+    "precision": "settlement",
+    "osm": "way/489263371",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f24",
+   "number": 24,
+   "kind": "village",
+   "name": "Библиотека-филиал № 24 с. Имшегал",
+   "settlement": "Имшегал",
+   "settlementType": "с.",
+   "address": "ул. Центральная, д. 17",
+   "postcode": "",
+   "phone": "",
+   "phoneHref": "",
+   "email": "",
+   "hours": [],
+   "status": "closed",
+   "statusNote": "Закрыта: на странице филиала опубликовано распоряжение о закрытии.",
+   "notes": [],
+   "path": "/biblioteka-filial-no-24-s-imshegal/",
+   "central": false,
+   "sources": [
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.35534,
+    "lon": 74.56484,
+    "precision": "settlement",
+    "osm": "way/1320348125",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f26",
+   "number": 26,
+   "kind": "village",
+   "name": "Атирская сельская библиотека-филиал № 26",
+   "settlement": "Атирка",
+   "settlementType": "с.",
+   "address": "ул. Колхозная, д. 6",
+   "postcode": "646523",
+   "phone": "8 (38171) 59-4-02",
+   "phoneHref": "+73817159402",
+   "email": "atirka-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-26-s-atirka/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.25637,
+    "lon": 74.27549,
+    "precision": "settlement",
+    "osm": "relation/18115475",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f27",
+   "number": 27,
+   "kind": "village",
+   "name": "Библиотека-филиал № 27 п. Пятилетка",
+   "settlement": "Пятилетка",
+   "settlementType": "п.",
+   "address": "",
+   "postcode": "",
+   "phone": "",
+   "phoneHref": "",
+   "email": "",
+   "hours": [],
+   "status": "unknown",
+   "statusNote": "Сведения не опубликованы: страницы филиала нет ни на сайте библиотеки, ни в базе библиотек РГДБ. Уточните в центральной библиотеке.",
+   "notes": [],
+   "path": "/biblioteka-filial-no-27-p-pyatiletka/",
+   "central": false,
+   "sources": [
+    "карта прежнего сайта"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.13192,
+    "lon": 74.11532,
+    "precision": "settlement",
+    "osm": "relation/8333471",
+    "osmPlace": "hamlet"
+   }
+  },
+  {
+   "id": "f28",
+   "number": 28,
+   "kind": "village",
+   "name": "Пологрудовская сельская библиотека-филиал № 28",
+   "settlement": "Пологрудово",
+   "settlementType": "с.",
+   "address": "ул. Советская, д. 11",
+   "postcode": "646522",
+   "phone": "8 (38171) 67-1-04",
+   "phoneHref": "+73817167104",
+   "email": "pologrud-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-28-s-pologrudovo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.11701,
+    "lon": 74.16251,
+    "precision": "settlement",
+    "osm": "relation/8333472",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f29",
+   "number": 29,
+   "kind": "village",
+   "name": "Библиотека-филиал № 29 п. М. Горького",
+   "settlement": "М. Горького",
+   "settlementType": "п.",
+   "address": "ул. 1 Новая, д. 1",
+   "postcode": "646522",
+   "phone": "8 (38171) 67-2-46",
+   "phoneHref": "+73817167246",
+   "email": "gorkogo-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-29-p-m-gorkogo/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.09702,
+    "lon": 74.1846,
+    "precision": "settlement",
+    "osm": "relation/18115406",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f30",
+   "number": 30,
+   "kind": "village",
+   "name": "Литковская сельская библиотека-филиал № 30",
+   "settlement": "Литковка",
+   "settlementType": "с.",
+   "address": "ул. Лесная, д. 46",
+   "postcode": "646528",
+   "phone": "8 (38171) 32-3-25",
+   "phoneHref": "+73817132325",
+   "email": "litkovka-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-30-s-litkovka/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.34217,
+    "lon": 75.10587,
+    "precision": "settlement",
+    "osm": "way/1320349078",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f32",
+   "number": 32,
+   "kind": "village",
+   "name": "Нагорно-Ивановская сельская библиотека-филиал № 32",
+   "settlement": "Нагорное",
+   "settlementType": "с.",
+   "address": "ул. Центральная, д. 34б",
+   "postcode": "646513",
+   "phone": "8 (38171) 45-4-18",
+   "phoneHref": "+73817145418",
+   "email": "nivanovka-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–17:30",
+    "Перерыв: 13:00–14:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-32-s-nagorno-ivanovka/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [
+    "Нагорно-Ивановка"
+   ],
+   "geo": {
+    "lat": 56.72858,
+    "lon": 74.8874,
+    "precision": "settlement",
+    "osm": "way/1320101096",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f34",
+   "number": 34,
+   "kind": "village",
+   "name": "Ермаковская сельская библиотека-филиал № 34",
+   "settlement": "Ермаковка",
+   "settlementType": "с.",
+   "address": "ул. Центральная, д. 50",
+   "postcode": "646514",
+   "phone": "8 (38171) 52-2-24",
+   "phoneHref": "+73817152224",
+   "email": "ermakovka-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 10:00–18:00",
+    "Перерыв: 13:30–15:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-34-s-ermakovka/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 57.04189,
+    "lon": 74.72056,
+    "precision": "settlement",
+    "osm": "way/1320342979",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f35",
+   "number": 35,
+   "kind": "village",
+   "name": "Междуреченская сельская библиотека-филиал № 35",
+   "settlement": "Междуречье",
+   "settlementType": "с.",
+   "address": "ул. Озерная, д. 5",
+   "postcode": "646511",
+   "phone": "8 (38171) 54-2-13",
+   "phoneHref": "+73817154213",
+   "email": "mej-bibl@yandex.ru",
+   "hours": [
+    "Понедельник – пятница: 9:00–18:00",
+    "Перерыв: 12:30–13:00",
+    "Воскресенье: 10:00–13:30",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-35-p-mezhdureche/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.81682,
+    "lon": 74.59252,
+    "precision": "settlement",
+    "osm": "relation/18113309",
+    "osmPlace": "village"
+   }
+  },
+  {
+   "id": "f36",
+   "number": 36,
+   "kind": "village",
+   "name": "Сеитовская сельская библиотека-филиал № 36",
+   "settlement": "Сеитово",
+   "settlementType": "д.",
+   "address": "ул. Молодежная, д. 12",
+   "postcode": "",
+   "phone": "8 (38171) 2-12-48",
+   "phoneHref": "+73817121248",
+   "email": "",
+   "hours": [],
+   "status": "suspended",
+   "statusNote": "Работа библиотеки временно приостановлена (приказ опубликован на странице филиала).",
+   "notes": [],
+   "path": "/biblioteka-filial-no-36-d-seitovo/",
+   "central": false,
+   "sources": [
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.9987,
+    "lon": 74.21455,
+    "precision": "settlement",
+    "osm": "node/1280101284",
+    "osmPlace": "hamlet"
+   }
+  },
+  {
+   "id": "f37",
+   "number": 37,
+   "kind": "village",
+   "name": "Усть-Тарская сельская библиотека-филиал № 37",
+   "settlement": "Усть-Тара",
+   "settlementType": "д.",
+   "address": "ул. Береговая, д. 61",
+   "postcode": "646512",
+   "phone": "8 (38171) 48-1-33",
+   "phoneHref": "+73817148133",
+   "email": "ubiblioteka37@mail.ru",
+   "hours": [
+    "Понедельник – пятница, воскресенье: 12:30–15:50, без перерыва",
+    "Суббота: выходной"
+   ],
+   "status": "open",
+   "statusNote": "",
+   "notes": [],
+   "path": "/biblioteka-filial-no-37-s-ust-tara/",
+   "central": false,
+   "sources": [
+    "Контакты всех библиотек (/kontakty-bibliotek/)",
+    "страница филиала"
+   ],
+   "aliases": [],
+   "geo": {
+    "lat": 56.67412,
+    "lon": 74.65503,
+    "precision": "settlement",
+    "osm": "way/1320098726",
+    "osmPlace": "village"
+   }
+  }
+ ]
+}

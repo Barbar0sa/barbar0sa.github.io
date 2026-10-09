@@ -1,0 +1,182 @@
+/* «Детям» (/detyam/): hub tiles, «Что почитать?», the quiz and reader badges. Loaded by app.js only on these pages.
+   Built on the bright system tokens of style.css; in the low-vision mode the tokens turn into the chosen scheme,
+   fills give way to borders, the selected answer gets a thick frame and a text mark, nothing moves. */
+.inner-page a[href^="tel:"]{white-space:nowrap}
+.kids-nojs{padding:16px 20px;border-radius:var(--r-md);background:var(--sun-tint)}
+[data-kids-owl],[data-quiz-owl],[data-picker-owl],.kids-badges-owl{aspect-ratio:556/636;line-height:0}
+.kids-greet{display:flex;align-items:flex-end;gap:14px;margin:-12px 0 28px}
+.kids-greet [data-kids-owl]{width:110px;flex-shrink:0}
+.kids-bubble{margin:0 0 24px;padding:14px 18px;max-width:36ch;border-radius:18px 18px 18px 4px;background:var(--card);box-shadow:var(--shadow-soft);color:var(--navy);font-weight:650;font-size:1.05rem;line-height:1.45}
+
+/* Hub tiles */
+.kids-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 48px}
+:where(.kids-tile,.kids-quiz-pick){--t:var(--sun);--tt:var(--sun-tint)}
+.kids-tile{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;min-height:180px;padding:22px 70px 22px 22px;border-radius:var(--r-lg);background:var(--tt);color:var(--ink);text-decoration:none;transition:transform .4s var(--spring),box-shadow .4s var(--ease)}
+.kids-tile:before{content:'';position:absolute;z-index:-1;width:190px;height:190px;right:-70px;bottom:-90px;border-radius:50%;background:var(--t);opacity:.45;transition:transform .55s var(--ease)}
+.kids-tile:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:var(--shadow)}
+.kids-tile:hover:before{transform:scale(2.2)}
+.kids-tile:active{transform:scale(.97)}
+.kids-tile .svc-go{top:50%;margin-top:-19px}
+.kids-tile:hover .svc-go{transform:translateX(4px)}
+.kids-tile-art{width:132px;line-height:0}
+.kids-tile-art img{width:100%;height:auto}
+.kids-tile-text strong{display:block;font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:750;letter-spacing:-.02em;line-height:1.2;color:var(--navy)}
+.kids-tile-text small{display:block;margin-top:6px;font-size:.98rem;line-height:1.45;color:var(--ink)}
+.kids-chip{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:var(--card);font-weight:700;font-size:.9rem;color:var(--navy)}
+@media(max-width:760px){.kids-tiles{grid-template-columns:minmax(0,1fr)}.kids-tile{min-height:0;padding:16px 60px 16px 16px;gap:14px}.kids-tile-art{width:84px}.kids-greet [data-kids-owl]{width:84px}}
+
+/* Choice cards (radio groups): age, genre, quiz answers */
+.kids-choice{margin:0 0 28px;padding:0;border:0;min-width:0}
+.kids-choice legend{padding:0;margin:0 0 14px;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:750;letter-spacing:-.02em;color:var(--navy)}
+.kids-step{display:inline-block;margin-right:8px;padding:3px 12px;border-radius:999px;background:var(--rowan);color:var(--on-accent);font-size:.8rem;font-weight:800;letter-spacing:0;vertical-align:.3em}
+.kids-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,11rem),1fr));gap:12px}
+.kids-genre-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,13rem),1fr))}
+.kids-option{position:relative;display:flex;align-items:center;gap:12px;min-height:64px;padding:14px 16px;border:3px solid transparent;border-radius:var(--r-md);background:var(--card);box-shadow:var(--shadow-soft);cursor:pointer;transition:transform .35s var(--spring),border-color .2s,background .2s}
+.kids-option:hover{transform:translateY(-3px)}
+.kids-option input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.kids-option:has(input:focus-visible){outline:3px solid var(--focus,var(--navy));outline-offset:3px}
+.kids-option:has(input:checked){border-color:var(--navy);background:var(--sun-tint)}
+.kids-option:has(input:checked):after{content:'✓';position:absolute;top:8px;right:10px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--on-dark);font-weight:800;font-size:.9rem}
+.kids-option strong{display:block;font-size:1.1rem;font-weight:750;color:var(--navy)}
+.kids-option small{display:block;font-size:.88rem;color:var(--muted)}
+.kids-age{justify-content:center;text-align:center;min-height:80px}
+.kids-genre{flex-direction:column;align-items:stretch;text-align:center;padding:10px 12px 14px}
+.kids-genre-art{display:block;width:min(100%,150px);margin:0 auto;line-height:0}
+.kids-genre-art img{width:100%;height:auto}
+.kids-genre-text strong{font-size:1rem}
+.kids-genres{margin-top:8px}
+.kids-picker-status{display:flex;align-items:flex-end;gap:12px;min-height:40px;margin:0 0 8px}
+.kids-picker-owl{width:64px;flex-shrink:0}
+.kids-result-note{margin:0 0 10px;font-weight:700;color:var(--navy)}
+.kids-results:focus{outline:none}
+.kids-results-title{margin:8px 0 18px}
+
+/* Book cards */
+.kids-books{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:14px;margin:0 0 32px;padding:0;list-style:none}
+.kids-book{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:var(--r-md);background:var(--card);box-shadow:var(--shadow-soft);border-top:6px solid var(--teal)}
+.kids-book:nth-child(3n+2){border-top-color:var(--sun)}
+.kids-book:nth-child(3n+3){border-top-color:var(--rowan)}
+.kids-book h3{margin:0;font-size:1.2rem;line-height:1.3;color:var(--navy)}
+.kids-book p{margin:0;line-height:1.5}
+.kids-book-author{font-weight:650;color:var(--muted)}
+.kids-book-where,.kids-book-query{font-size:.9rem;color:var(--muted)}
+.kids-book-query span{font-weight:700;color:var(--ink)}
+.kids-book-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.kids-book-actions .button{padding:8px 14px;font-size:.92rem}
+.kids-copy{min-height:44px;padding:8px 14px;border:2px solid var(--line-strong,#999);border-radius:999px;background:none;color:var(--ink);font:inherit;font-size:.92rem;font-weight:650;cursor:pointer}
+.kids-copy:hover{border-color:var(--navy)}
+.kids-sources{padding:20px 22px;border-radius:var(--r-md);background:var(--sky-tint)}
+.kids-sources h3{margin:0 0 8px;font-size:1.05rem}
+.kids-sources ul{margin:0 0 10px;padding-left:20px}
+.kids-sources li{margin:6px 0}
+.kids-sources small{color:var(--muted)}
+.kids-sources .i-ext{width:14px;height:14px;margin-left:4px;vertical-align:-1px}
+.kids-empty{padding:22px 24px;border-radius:var(--r-md);background:var(--rowan-tint)}
+.kids-empty p{margin:0 0 12px}
+.kids-empty p:last-child{margin:0}
+
+/* Quiz */
+.kids-quiz-menu h2{margin-top:0}
+.kids-quiz-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:14px;margin:0 0 40px;padding:0;list-style:none}
+.kids-quiz-pick{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;height:100%;min-height:170px;padding:20px;border:0;border-radius:var(--r-lg);background:var(--tt);color:var(--ink);font:inherit;text-align:left;cursor:pointer;transition:transform .4s var(--spring),box-shadow .4s var(--ease)}
+.kids-quiz-pick:before{content:'';position:absolute;z-index:-1;width:150px;height:150px;right:-60px;bottom:-70px;border-radius:50%;background:var(--t);opacity:.45}
+.kids-quiz-pick:hover{transform:translateY(-5px) rotate(-.5deg);box-shadow:var(--shadow)}
+.kids-quiz-pick strong{font-size:1.3rem;font-weight:750;color:var(--navy);letter-spacing:-.02em}
+.kids-quiz-pick small{font-size:.95rem;line-height:1.45}
+.kids-quiz-age{padding:3px 12px;border-radius:999px;background:var(--card);font-size:.82rem;font-weight:800;color:var(--navy)}
+.kids-quiz-meta{margin-top:auto;font-size:.88rem;font-weight:650;color:var(--muted)}
+.kids-quiz{margin:0 0 48px}
+.kids-quiz-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:10px}
+.kids-quiz-name{margin:0;font-size:1.1rem;color:var(--navy)}
+.kids-quiz-name span{font-size:.9rem;color:var(--muted)}
+.kids-quiz-count{margin:0;font-weight:700}
+.kids-progress{flex-basis:100%;height:14px;border-radius:999px;background:var(--sun-tint);overflow:hidden;border:2px solid var(--navy)}
+.kids-progress span{display:block;height:100%;width:0;border-radius:999px;background:var(--rowan);transition:width .5s var(--ease)}
+.kids-quiz-stage{display:grid;grid-template-columns:140px minmax(0,1fr);gap:24px;align-items:start;margin-top:22px}
+.kids-quiz-owl{position:sticky;top:90px}
+.kids-quiz-card{min-width:0;padding:26px;border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow)}
+.kids-quiz-card:focus{outline:none}
+.kids-q{margin:0;padding:0;border:0;min-width:0}
+.kids-q legend{padding:0;margin:0 0 18px}
+.kids-kind{display:inline-block;margin-bottom:10px;padding:3px 12px;border-radius:999px;background:var(--sky-tint);font-size:.85rem;font-weight:800;color:var(--sky-ink,var(--navy))}
+.kids-qtext{display:block;font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:750;line-height:1.35;letter-spacing:-.015em;color:var(--navy)}
+.kids-answers{display:grid;gap:10px}
+.kids-answer{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;min-height:56px;padding:12px 16px;border:3px solid var(--line,#ddd);border-radius:var(--r-md);background:var(--card);cursor:pointer;font-size:1.08rem;font-weight:600;transition:border-color .2s,background .2s,transform .3s var(--spring)}
+.kids-answer:hover{border-color:var(--navy)}
+.kids-answer input{flex-shrink:0;width:22px;height:22px;margin:0;accent-color:var(--navy)}
+.kids-answer span{flex:1 1 12rem;min-width:0;overflow-wrap:anywhere}
+.kids-answer:has(input:checked){border-color:var(--navy);background:var(--sun-tint)}
+.kids-answer:has(input:disabled){cursor:default}
+.kids-q .kids-answer.is-right{border-color:var(--teal-ink,#0b6b5c);background:var(--teal-tint)}
+.kids-q .kids-answer.is-wrong{border-color:var(--rowan-ink,#a33);background:var(--rowan-tint);border-style:dashed}
+.kids-mark{flex-basis:100%;padding-left:34px;font-family:inherit;font-style:normal;font-size:.88rem;font-weight:800;color:var(--ink)}
+.kids-q-actions{margin-top:18px}
+.kids-feedback:empty{display:none}
+.kids-feedback{margin-top:18px;padding:16px 18px;border-radius:var(--r-md);background:var(--sun-tint)}
+.kids-feedback p{margin:0 0 8px;line-height:1.5}
+.kids-feedback p:last-child{margin:0}
+.kids-verdict{font-size:1.15rem;font-weight:800;color:var(--navy)}
+.kids-book-ref{font-size:.92rem;color:var(--muted)}
+.kids-result h2{margin:0 0 8px}
+.kids-result h2:focus{outline:none}
+.kids-score{margin:0 0 18px;font-size:1.2rem}
+.kids-score strong{font-size:2.6rem;font-weight:800;color:var(--rowan-ink,var(--navy))}
+.kids-learn{margin:0 0 18px;padding-left:20px}
+.kids-learn li{margin:6px 0}
+.kids-invite{margin:18px 0;padding:16px 18px;border-radius:var(--r-md);background:var(--teal-tint)}
+.kids-invite p{margin:0;line-height:1.55}
+@media(max-width:760px){.kids-quiz-stage{grid-template-columns:minmax(0,1fr);gap:8px}.kids-quiz-owl{position:static;width:84px}.kids-quiz-card{padding:18px}}
+
+/* Badges */
+.kids-badges-top{display:flex;align-items:flex-end;gap:16px;margin:0 0 20px}
+.kids-badges-owl{width:96px;flex-shrink:0}
+.kids-badges-count{margin:0 0 12px;font-size:1.2rem;font-weight:700}
+.kids-badges-count strong{font-size:2.4rem;font-weight:800;color:var(--rowan-ink,var(--navy))}
+.kids-badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:14px;margin:0 0 32px;padding:0;list-style:none}
+.kids-badge{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 16px;border-radius:var(--r-lg);background:var(--card);box-shadow:var(--shadow-soft);text-align:center}
+.kids-badge.is-on{background:var(--sun-tint)}
+.kids-badge-art{width:140px;line-height:0}
+.kids-badge-art img{width:100%;height:auto}
+.kids-badge h3{margin:6px 0 0;font-size:1.15rem;color:var(--navy)}
+.kids-badge p{margin:0;font-size:.95rem;line-height:1.45}
+.kids-badge-state{margin-top:auto!important;padding-top:6px;font-weight:700;color:var(--muted)}
+.kids-badge.is-on .kids-badge-state{color:var(--teal-ink,var(--navy))}
+.kids-code{padding:16px 20px;border-radius:var(--r-md);background:var(--teal-tint);font-size:1.05rem}
+.kids-code.is-bad{background:var(--rowan-tint)}
+.kids-note{padding:12px 16px;border-radius:var(--r-sm);background:var(--rowan-tint)}
+.kids-reset{margin:0 0 40px}
+.kids-reset summary{cursor:pointer;font-weight:650;min-height:44px;display:flex;align-items:center}
+
+/* Toasts */
+.kids-toasts{position:fixed;z-index:60;left:50%;bottom:20px;transform:translateX(-50%);display:grid;gap:10px;width:min(92vw,420px);pointer-events:none}
+.kids-toast{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:var(--r-md);background:var(--navy);color:var(--on-dark);box-shadow:var(--shadow);pointer-events:auto;font-size:1.02rem;line-height:1.35}
+.kids-toast strong{display:block;color:var(--sun)}
+.kids-toast-badge{width:64px;flex-shrink:0;line-height:0}
+.kids-toast-badge img{width:100%;height:auto}
+.kids-toast-close{margin-left:auto;flex-shrink:0;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:inherit;font-size:1.6rem;cursor:pointer}
+
+/* Low-vision mode: borders instead of fills, a frame and a text mark for the chosen answer, no motion, images optional */
+.access-mode :is(.kids-tile,.kids-option,.kids-book,.kids-sources,.kids-empty,.kids-quiz-pick,.kids-quiz-card,.kids-feedback,.kids-invite,.kids-badge,.kids-code,.kids-note,.kids-bubble,.kids-nojs){background:var(--access-bg)!important;color:var(--access-fg);border:2px solid var(--access-fg);box-shadow:none;transform:none!important}
+.access-mode :is(.kids-tile,.kids-quiz-pick):before{display:none}
+.access-mode .kids-tiles{grid-template-columns:minmax(0,1fr)}
+.access-mode .kids-tile{grid-template-columns:minmax(0,1fr);padding-right:22px}
+.access-mode .kids-tile .svc-go{display:none}
+.access-mode .kids-option:has(input:checked),.access-mode .kids-answer:has(input:checked){border-width:5px;border-color:var(--access-fg)}
+.access-mode .kids-option:has(input:checked):after{background:var(--access-fg);color:var(--access-bg)}
+.access-mode .kids-answer.is-right,.access-mode .kids-q .kids-answer.is-wrong{background:var(--access-bg);border-color:var(--access-fg);border-width:4px}
+.access-mode .kids-progress{background:var(--access-bg);border-color:var(--access-fg)}
+.access-mode .kids-progress span{background:var(--access-fg);transition:none}
+.access-mode :is(.kids-step,.kids-kind,.kids-quiz-age,.kids-chip){background:var(--access-bg);color:var(--access-fg);border:2px solid var(--access-fg)}
+.access-mode .kids-toast{background:var(--access-bg);color:var(--access-fg);border:3px solid var(--access-fg)}
+.access-mode .kids-toast strong{color:var(--access-fg)}
+.access-mode .kids-quiz-stage{grid-template-columns:minmax(0,1fr)}
+.access-mode .kids-quiz-owl{position:static;width:96px}
+.access-mode .kids-book{border-top-width:2px}
+.access-mode .kids-options{grid-template-columns:minmax(0,1fr)}
+.access-mode .kids-genre{flex-direction:row;text-align:left}
+.access-mode .kids-genre-art{width:96px;margin:0}
+.access-no-images :is(.kids-tile-art,.kids-genre-art,.kids-badge-art,.kids-toast-badge,[data-kids-owl],[data-quiz-owl],[data-picker-owl],.kids-badges-owl){display:none!important}
+.access-mode[data-access-colors="wb"] :is(.kids-tile-art img,.kids-genre-art img,.kids-badge-art img,.kids-toast-badge img,.owl svg){filter:drop-shadow(1.5px 0 0 #f5eee1) drop-shadow(-1.5px 0 0 #f5eee1) drop-shadow(0 1.5px 0 #f5eee1) drop-shadow(0 -1.5px 0 #f5eee1)}
+@media (prefers-reduced-motion: reduce){.kids-tile,.kids-option,.kids-quiz-pick,.kids-answer,.kids-progress span{transition:none!important}.kids-tile:hover,.kids-option:hover,.kids-quiz-pick:hover{transform:none}}
+/* --navy is the background colour in the low-vision schemes: every text of the section takes the scheme's text colour */
+.access-mode :is(.kids-tiles,.kids-greet,.kids-app,.kids-toasts) :is(strong,h2,h3,legend,p,span,small,em,label,li,button){color:var(--access-fg)}
